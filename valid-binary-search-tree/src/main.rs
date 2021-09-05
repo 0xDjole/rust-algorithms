@@ -1,10 +1,13 @@
+use std::cell::RefCell;
+use std::rc::Rc;
+
 struct Node {
     value: i32,
     left: Leaf,
     right: Leaf,
 }
 
-type Leaf = Option<Box<Node>>;
+type Leaf = Rc<RefCell<Option<Node>>>;
 
 impl Node {
     pub fn new(value: i32, left: Leaf, right: Leaf) -> Node {
@@ -13,7 +16,7 @@ impl Node {
 
     pub fn is_valid(&self) -> bool {
         let mut valid = true;
-        if let Some(left_leaf) = &self.left {
+        if let Some(left_leaf) = self.left.borrow().as_ref() {
             if left_leaf.value < self.value && left_leaf.is_valid() {
                 valid = true
             } else {
@@ -25,8 +28,8 @@ impl Node {
             return false;
         }
 
-        if let Some(right_leaf) = &self.left {
-            if right_leaf.value < self.value && right_leaf.is_valid() {
+        if let Some(right_leaf) = self.right.borrow().as_ref() {
+            if right_leaf.value > self.value && right_leaf.is_valid() {
                 valid = true
             } else {
                 valid = false
@@ -38,12 +41,28 @@ impl Node {
 }
 
 fn main() {
-    let mut node1 = Node::new(10, None, None);
-    let node2 = Node::new(5, None, None);
-    let node3 = Node::new(20, None, None);
+    let mut node1 = Node::new(10, Rc::new(RefCell::new(None)), Rc::new(RefCell::new(None)));
+    let node2 = Rc::new(RefCell::new(Some(Node::new(
+        5,
+        Rc::new(RefCell::new(None)),
+        Rc::new(RefCell::new(None)),
+    ))));
 
-    node1.left = Some(Box::new(node2));
-    node1.right = Some(Box::new(node3));
+    let node3 = Rc::new(RefCell::new(Some(Node::new(
+        15,
+        Rc::new(RefCell::new(None)),
+        Rc::new(RefCell::new(None)),
+    ))));
+
+    let node4 = Rc::new(RefCell::new(Some(Node::new(
+        3,
+        Rc::new(RefCell::new(None)),
+        Rc::new(RefCell::new(None)),
+    ))));
+
+    node1.left = Rc::clone(&node2);
+    node1.right = Rc::clone(&node3);
+    node2.borrow_mut().as_mut().unwrap().left = Rc::clone(&node4);
 
     let is_valid = node1.is_valid();
     println!("IS VALID {:?} ", is_valid);
