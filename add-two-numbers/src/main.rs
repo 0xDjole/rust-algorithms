@@ -24,7 +24,7 @@ impl Solution {
         let mut current = head.as_mut();
         let mut carry = 0;
 
-        while l1_current.is_some() || l2_current.is_some() {
+        while l1_current.is_some() || l2_current.is_some() || carry != 0 {
             let mut sum = carry;
 
             if let Some(node) = l1_current {
