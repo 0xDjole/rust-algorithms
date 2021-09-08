@@ -26,6 +26,7 @@ impl Solution {
         return -1;
     }
 }
+
 fn main() {
     let numbers = vec![1, 2, 2, 3, 8, 10, 22];
     let target = 2;
