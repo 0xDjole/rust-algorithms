@@ -5,7 +5,3 @@ mod permutations;
 mod ransom_note;
 mod two_sum;
 mod valid_binary_search_tree;
-
-fn main() {
-    println!("Hello, world!");
-}
