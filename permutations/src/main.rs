@@ -6,10 +6,6 @@ impl Solution {
     }
 
     fn permute_helper(mut numbers: Vec<i32>, start: i32) -> Vec<Vec<i32>> {
-        if numbers.len() <= 1 {
-            return vec![numbers];
-        }
-
         if start == numbers.len() as i32 {
             return vec![numbers];
         }
