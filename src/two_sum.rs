@@ -3,7 +3,7 @@ use std::collections::HashMap;
 struct Solution {}
 
 impl Solution {
-    pub fn two_sum(numbers: Vec<i32>, wanted_sum: i32) -> Vec<i32> {
+    fn two_sum(numbers: Vec<i32>, wanted_sum: i32) -> Vec<i32> {
         let mut seen: HashMap<i32, i32> = HashMap::new();
         for (index, number) in numbers.iter().enumerate() {
             let wanted_seen_number = wanted_sum - number;

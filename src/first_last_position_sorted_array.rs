@@ -1,7 +1,7 @@
 struct Solution {}
 
 impl Solution {
-    pub fn first_last_position_sorted_array(numbers: Vec<i32>, target: i32) -> [i32; 2] {
+    fn first_last_position_sorted_array(numbers: Vec<i32>, target: i32) -> [i32; 2] {
         let left_position = Self::binary_search(&numbers, target, true);
         let right_position = Self::binary_search(&numbers, target, false);
 

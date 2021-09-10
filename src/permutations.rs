@@ -1,7 +1,7 @@
 struct Solution {}
 
 impl Solution {
-    pub fn permute(numbers: Vec<i32>) -> Vec<Vec<i32>> {
+    fn permute(numbers: Vec<i32>) -> Vec<Vec<i32>> {
         Self::permute_helper(numbers, 0)
     }
 

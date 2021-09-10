@@ -1,7 +1,7 @@
 struct Solution {}
 
 impl Solution {
-    pub fn binary_search(numbers: Vec<i32>, target: i32) -> i32 {
+    fn binary_search(numbers: Vec<i32>, target: i32) -> i32 {
         let mut low: usize = 0;
         let mut high: usize = numbers.len() - 1;
 

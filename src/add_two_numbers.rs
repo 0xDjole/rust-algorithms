@@ -1,5 +1,5 @@
 #[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
+struct ListNode {
     pub val: i32,
     pub next: Option<Box<ListNode>>,
 }
@@ -14,7 +14,7 @@ impl ListNode {
 struct Solution {}
 
 impl Solution {
-    pub fn add_two_numbers(
+    fn add_two_numbers(
         l1: Option<Box<ListNode>>,
         l2: Option<Box<ListNode>>,
     ) -> Option<Box<ListNode>> {

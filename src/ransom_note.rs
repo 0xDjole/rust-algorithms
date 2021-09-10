@@ -3,7 +3,7 @@ use std::collections::HashMap;
 struct Solution {}
 
 impl Solution {
-    pub fn can_spell(magazine: Vec<char>, note: String) -> bool {
+    fn can_spell(magazine: Vec<char>, note: String) -> bool {
         let mut letters: HashMap<char, usize> = HashMap::new();
 
         for character in magazine {

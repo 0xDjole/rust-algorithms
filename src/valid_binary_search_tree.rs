@@ -10,11 +10,11 @@ impl<T> BST<T>
 where
     T: Ord,
 {
-    pub fn new(value: T, left: Leaf<T>, right: Leaf<T>) -> BST<T> {
+    fn new(value: T, left: Leaf<T>, right: Leaf<T>) -> BST<T> {
         BST { value, left, right }
     }
 
-    pub fn is_valid(&self) -> bool {
+    fn is_valid(&self) -> bool {
         let mut valid = true;
         if let Some(left_leaf) = &self.left {
             if left_leaf.value < self.value && left_leaf.is_valid() {
