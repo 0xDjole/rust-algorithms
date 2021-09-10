@@ -25,7 +25,8 @@ impl Solution {
     }
 }
 
-fn main() {
+#[test]
+fn ransom_note() {
     let magazine = vec!['A', 'B', 'C', 'D', 'T', 'A'];
     let note = String::from("CATSDSAS");
 

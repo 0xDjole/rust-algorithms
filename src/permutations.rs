@@ -22,7 +22,9 @@ impl Solution {
         result
     }
 }
-fn main() {
+
+#[test]
+fn permutations() {
     let numbers = vec![1, 2, 3];
 
     let result = Solution::permute(numbers);

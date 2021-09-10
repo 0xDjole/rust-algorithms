@@ -27,7 +27,8 @@ impl Solution {
     }
 }
 
-fn main() {
+#[test]
+fn binary_search() {
     let numbers = vec![1, 2, 2, 3, 8, 10, 22];
     let target = 2;
 

@@ -40,7 +40,8 @@ where
     }
 }
 
-fn main() {
+#[test]
+fn valid_binary_search_tree() {
     let mut node1 = BST::new(10, None, None);
     let mut node2 = BST::new(5, None, None);
     let node3 = BST::new(15, None, None);

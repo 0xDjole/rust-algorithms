@@ -34,7 +34,8 @@ impl Solution {
     }
 }
 
-fn main() {
+#[test]
+fn first_last_position_sorted_array() {
     let numbers = vec![1, 3, 3, 3, 22];
     let target = 3;
 

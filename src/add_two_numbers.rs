@@ -52,7 +52,9 @@ impl Solution {
         head.unwrap().next
     }
 }
-fn main() {
+
+#[test]
+fn add_two_numbers() {
     let mut node1 = ListNode::new(3);
     node1.next = Some(Box::new(ListNode::new(6)));
     node1.next.as_mut().unwrap().next = Some(Box::new(ListNode::new(5)));
