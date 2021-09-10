@@ -25,12 +25,17 @@ impl Solution {
     }
 }
 
-#[test]
-fn ransom_note() {
-    let magazine = vec!['A', 'B', 'C', 'D', 'T', 'A'];
-    let note = String::from("CATSDSAS");
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    let can_spell = Solution::can_spell(magazine, note);
+    #[test]
+    fn ransom_note() {
+        let magazine = vec!['A', 'B', 'C', 'D', 'T', 'A'];
+        let note = String::from("CATSDSAS");
 
-    println!("Solution is {:?}", can_spell);
+        let can_spell = Solution::can_spell(magazine, note);
+
+        println!("Solution is {:?}", can_spell);
+    }
 }

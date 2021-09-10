@@ -27,12 +27,17 @@ impl Solution {
     }
 }
 
-#[test]
-fn binary_search() {
-    let numbers = vec![1, 2, 2, 3, 8, 10, 22];
-    let target = 2;
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    let result = Solution::binary_search(numbers, target);
+    #[test]
+    fn binary_search() {
+        let numbers = vec![1, 2, 2, 3, 8, 10, 22];
+        let target = 2;
 
-    println!("RESULT IS {:?}", result);
+        let result = Solution::binary_search(numbers, target);
+
+        println!("RESULT IS {:?}", result);
+    }
 }

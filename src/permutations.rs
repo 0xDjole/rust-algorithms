@@ -23,11 +23,16 @@ impl Solution {
     }
 }
 
-#[test]
-fn permutations() {
-    let numbers = vec![1, 2, 3];
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    let result = Solution::permute(numbers);
+    #[test]
+    fn permutations() {
+        let numbers = vec![1, 2, 3];
 
-    println!("RESULT IS {:?}", result);
+        let result = Solution::permute(numbers);
+
+        println!("RESULT IS {:?}", result);
+    }
 }

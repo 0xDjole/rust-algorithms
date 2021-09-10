@@ -34,12 +34,17 @@ impl Solution {
     }
 }
 
-#[test]
-fn first_last_position_sorted_array() {
-    let numbers = vec![1, 3, 3, 3, 22];
-    let target = 3;
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    let result = Solution::first_last_position_sorted_array(numbers, target);
+    #[test]
+    fn first_last_position_sorted_array() {
+        let numbers = vec![1, 3, 3, 3, 22];
+        let target = 3;
 
-    println!("RESULT IS {:?}", result);
+        let result = Solution::first_last_position_sorted_array(numbers, target);
+
+        println!("RESULT IS {:?}", result);
+    }
 }

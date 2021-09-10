@@ -40,21 +40,26 @@ where
     }
 }
 
-#[test]
-fn valid_binary_search_tree() {
-    let mut node1 = BST::new(10, None, None);
-    let mut node2 = BST::new(5, None, None);
-    let node3 = BST::new(15, None, None);
-    let node4 = BST::new(2, None, None);
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    let node4_leaf = Some(Box::new(node4));
-    node2.left = node4_leaf;
-    let node2_leaf = Some(Box::new(node2));
-    let node3_leaf = Some(Box::new(node3));
+    #[test]
+    fn valid_binary_search_tree() {
+        let mut node1 = BST::new(10, None, None);
+        let mut node2 = BST::new(5, None, None);
+        let node3 = BST::new(15, None, None);
+        let node4 = BST::new(2, None, None);
 
-    node1.left = node2_leaf;
-    node1.right = node3_leaf;
+        let node4_leaf = Some(Box::new(node4));
+        node2.left = node4_leaf;
+        let node2_leaf = Some(Box::new(node2));
+        let node3_leaf = Some(Box::new(node3));
 
-    let is_valid = node1.is_valid();
-    println!("IS VALID {:?} ", is_valid);
+        node1.left = node2_leaf;
+        node1.right = node3_leaf;
+
+        let is_valid = node1.is_valid();
+        println!("IS VALID {:?} ", is_valid);
+    }
 }

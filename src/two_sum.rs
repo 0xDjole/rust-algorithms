@@ -19,11 +19,16 @@ impl Solution {
     }
 }
 
-#[test]
-fn two_sum() {
-    let numbers = vec![1, 2, 3, 4, 5];
-    let wanted_sum = 7;
-    let result = Solution::two_sum(numbers, wanted_sum);
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    println!("Solution is {:?}", result);
+    #[test]
+    fn two_sum() {
+        let numbers = vec![1, 2, 3, 4, 5];
+        let wanted_sum = 7;
+        let result = Solution::two_sum(numbers, wanted_sum);
+
+        println!("Solution is {:?}", result);
+    }
 }

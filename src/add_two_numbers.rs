@@ -53,16 +53,21 @@ impl Solution {
     }
 }
 
-#[test]
-fn add_two_numbers() {
-    let mut node1 = ListNode::new(3);
-    node1.next = Some(Box::new(ListNode::new(6)));
-    node1.next.as_mut().unwrap().next = Some(Box::new(ListNode::new(5)));
+#[cfg(test)]
+mod test {
+    use super::*;
 
-    let mut node2 = ListNode::new(2);
-    node2.next = Some(Box::new(ListNode::new(4)));
-    node2.next.as_mut().unwrap().next = Some(Box::new(ListNode::new(8)));
+    #[test]
+    fn add_two_numbers() {
+        let mut node1 = ListNode::new(3);
+        node1.next = Some(Box::new(ListNode::new(6)));
+        node1.next.as_mut().unwrap().next = Some(Box::new(ListNode::new(5)));
 
-    let result = Solution::add_two_numbers(Some(Box::new(node1)), Some(Box::new(node2)));
-    println!("RESULT {:?}", result);
+        let mut node2 = ListNode::new(2);
+        node2.next = Some(Box::new(ListNode::new(4)));
+        node2.next.as_mut().unwrap().next = Some(Box::new(ListNode::new(8)));
+
+        let result = Solution::add_two_numbers(Some(Box::new(node1)), Some(Box::new(node2)));
+        println!("RESULT {:?}", result);
+    }
 }
