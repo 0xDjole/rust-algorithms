@@ -29,7 +29,6 @@ mod tests {
 
     #[test]
     fn queue_reconstruction() {
-        // [[5, 0] [7, 0] [5, 2] [6, 1]]
         let queue = vec![[7, 0], [5, 0], [5, 2], [6, 1]];
         let result = Solution::queue_reconstruction(queue);
         println!("RESULT IS {:?} ", result);
