@@ -6,15 +6,17 @@ impl Solution {
     fn queue_reconstruction(mut queue: Vec<[i32; 2]>) -> Vec<[i32; 2]> {
         queue.sort_by(|a, b| {
             if a[0] > b[0] {
-                return a[0].partial_cmp(&b[0]).map(Ordering::reverse).unwrap();
+                a[0].partial_cmp(&b[0]).map(Ordering::reverse).unwrap()
+            } else if a[0] == b[0] {
+                a[1].partial_cmp(&b[1]).map(Ordering::reverse).unwrap()
             } else {
-                return Ordering::Equal;
+                Ordering::Equal
             }
         });
-        println!("SORTED {:?}", queue);
+
         let mut result = vec![];
         for person in queue {
-            result.push(person);
+            result.insert(person[1] as usize, person);
         }
 
         result
