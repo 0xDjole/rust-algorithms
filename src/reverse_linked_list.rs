@@ -21,7 +21,7 @@ impl Solution {
         while current.clone().is_some() {
             let temporary = current.clone().unwrap().next;
             current.as_mut().unwrap().next = previous;
-            previous = current.clone();
+            previous = current;
             current = temporary;
         }
 
