@@ -18,7 +18,7 @@ impl Solution {
         let mut current = node;
         let mut previous = None;
 
-        while current.clone().is_some() {
+        while !current.is_none() {
             let temporary = current.clone().unwrap().next;
             current.as_mut().unwrap().next = previous;
             previous = current;
