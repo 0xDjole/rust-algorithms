@@ -14,8 +14,8 @@ impl ListNode {
 struct Solution {}
 
 impl Solution {
-    fn reverse(node: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-        let mut current = node;
+    fn reverse(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+        let mut current = head;
         let mut previous = None;
 
         while !current.is_none() {
