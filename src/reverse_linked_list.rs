@@ -19,10 +19,10 @@ impl Solution {
         let mut previous = None;
 
         while !current.is_none() {
-            let temporary = current.clone().unwrap().next;
+            let next_node = current.clone().unwrap().next;
             current.as_mut().unwrap().next = previous;
             previous = current;
-            current = temporary;
+            current = next_node;
         }
 
         previous
