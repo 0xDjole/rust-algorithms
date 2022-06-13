@@ -1,5 +1,6 @@
 mod add_two_numbers;
 mod binary_search;
+mod dfs;
 mod find_non_duplicate_number;
 mod first_last_position_sorted_array;
 mod invert_binary_tree;
