@@ -6,6 +6,7 @@ mod first_last_position_sorted_array;
 mod invert_binary_tree;
 mod permutations;
 mod queue_reconstruction;
+mod quicksort;
 mod ransom_note;
 mod reverse_linked_list;
 mod three_unique_number_sort;
